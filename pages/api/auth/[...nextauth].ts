@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaClient } from "@prisma/client";
+import { JWTOptions } from "next-auth/jwt";
 
 const prisma = new PrismaClient();
 
@@ -15,7 +16,7 @@ export default NextAuth({
     encryptionKey: process.env.AUTH_JWT_ENCRYPTION_KEY,
     secret: process.env.AUTH_JWT_SECRET,
     signingKey: process.env.AUTH_JWT_SIGNING_KEY,
-  },
+  } as Partial<JWTOptions>,
   providers: [
     CredentialsProvider({
       name: "basic",
