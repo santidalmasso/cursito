@@ -1,11 +1,8 @@
-import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
+import { NextApiHandler } from "next";
 import prisma from "../../../prisma/prisma-client";
 import { compare } from "bcrypt";
 
-const credentialsAuth: NextApiHandler<any> = async (
-  req: NextApiRequest,
-  res: NextApiResponse
-) => {
+const credentialsAuth: NextApiHandler<any> = async (req, res) => {
   if (req.method !== "POST") {
     res.status(405).end();
   }

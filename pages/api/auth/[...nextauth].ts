@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
-import Credentials from "next-auth/providers/credentials";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -17,9 +16,8 @@ export default NextAuth({
     secret: process.env.AUTH_JWT_SECRET,
     signingKey: process.env.AUTH_JWT_SIGNING_KEY,
   },
-  adapter: PrismaAdapter(prisma),
   providers: [
-    Credentials({
+    CredentialsProvider({
       name: "basic",
       credentials: {
         email: { label: "Email...", type: "email" },
@@ -42,17 +40,4 @@ export default NextAuth({
       },
     }),
   ],
-  pages: {
-    signIn: "/auth/signin",
-  },
-  callbacks: {
-    async signIn({ user, account, profile, email, credentials }) {
-      const isAllowedToSignIn = true;
-      if (isAllowedToSignIn) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-  },
 });

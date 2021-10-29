@@ -3,7 +3,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useState } from "react";
 import s from "./index.module.css";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
 
 export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
@@ -12,7 +12,7 @@ export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
   if (session) {
     return {
       redirect: {
-        destination: "/courses",
+        destination: "/events",
         permanent: false,
       },
       props: { session },
@@ -89,10 +89,11 @@ function IndexPage() {
     signIn("credentials", {
       email: event.target.email.value,
       password: event.target.password.value,
-      callbackUrl: `${process.env.NEXT_PUBLIC_URL}/courses`,
+      callbackUrl: `${process.env.NEXT_PUBLIC_URL}/events`,
     })
       .then((res) => {
         if (!res.ok) setLoginError(true);
+        console.log(res.ok);
         setLoading(false);
         router.push("/events");
       })

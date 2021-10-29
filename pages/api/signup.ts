@@ -1,12 +1,8 @@
 import prisma from "../../prisma/prisma-client";
 import { registerSchema } from "lib/schemas";
 import { hash } from "bcrypt";
-import { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     return req.status(405).end();
   }
