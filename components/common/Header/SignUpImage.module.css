@@ -1,0 +1,6 @@
+.root {
+  @apply w-full grid place-content-center rounded-xl;
+  background-image: url(/images/signup-background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

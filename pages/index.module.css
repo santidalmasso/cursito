@@ -1,0 +1,22 @@
+.main {
+  @apply h-screen w-screen;
+  background: linear-gradient(
+    189.16deg,
+    rgb(57, 15, 199) 13.57%,
+    rgb(40, 35, 77) 98.38%
+  );
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  max-height: 50vh;
+}
+
+.roundWave {
+  position: absolute;
+  bottom: 50;
+  left: 0;
+  width: 150vh;
+  opacity: 0.4;
+}

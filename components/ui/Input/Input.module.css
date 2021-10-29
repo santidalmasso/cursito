@@ -1,0 +1,23 @@
+.container {
+  @apply relative;
+}
+
+.root {
+  @apply py-3 px-5 w-full rounded-full appearance-none pr-10 text-white border-none placeholder-gray-300;
+  background: linear-gradient(
+    rgba(75, 85, 99, 0.8) 0%,
+    rgba(107, 114, 128, 0.6) 100%
+  );
+  box-shadow: rgb(0 0 0 / 15%) 0px 20px 40px,
+    rgb(255 255 255 / 30%) 0px 0px 0px 0.5px inset;
+  transition: border 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
+
+.root:focus {
+  @apply outline-none;
+  box-shadow: rgb(47, 184, 255) 0px 0px 2px 1px;
+}
+
+.icon {
+  @apply absolute right-4 top-0 text-gray-300 h-full flex items-center;
+}

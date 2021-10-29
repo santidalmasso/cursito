@@ -1,0 +1,50 @@
+.root {
+  @apply text-black cursor-pointer inline-flex
+  px-5 py-3 text-center justify-center rounded-full items-center tracking-wide w-full text-lg
+  transition duration-100 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl;
+  transition: 0.1s;
+  background: linear-gradient(
+    91.4deg,
+    rgb(47, 184, 255) 0%,
+    rgb(158, 236, 217) 100%
+  );
+}
+
+.root:active {
+  transform: scale(0.97);
+}
+
+.root:focus {
+  @apply outline-none;
+}
+
+.secondary {
+  @apply bg-green-200 text-green-600;
+}
+
+.disabled,
+.disabled:hover {
+  @apply text-gray-300 border-gray-200 bg-gray-100 cursor-not-allowed;
+  filter: grayscale(1);
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+}
+
+.loading,
+.loading:hover {
+  background: initial;
+  @apply bg-gray-500 text-gray-300 border-gray-200 cursor-not-allowed h-11;
+}
+
+.glass {
+  @apply text-white rounded-2xl;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: rgb(31 47 71 / 25%) 0px 20px 40px, rgb(0 0 0 / 10%) 0px 1px 5px,
+    rgb(255 255 255 / 40%) 0px 0px 0px 0.5px inset;
+}
+
+.glass:hover {
+  @apply ease-in hover:-translate-y-0;
+  background: rgba(255, 255, 255, 0.4);
+}
