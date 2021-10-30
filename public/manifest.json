@@ -1,7 +1,7 @@
 {
-  "name": "Cursito Progressive Web App",
+  "name": "Cursito",
   "short_name": "Cursito",
-  "theme_color": "#ffffff",
+  "theme_color": "#000",
   "background_color": "#004740",
   "display": "fullscreen",
   "orientation": "portrait",
